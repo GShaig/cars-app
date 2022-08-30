@@ -34,7 +34,7 @@ You can reach to the admin panel with the help of '/admin' relative pass. Admin 
 
 ## Running
 In order to run the API on localhost, please go to the folder where 'api.py' located and run below command:
-### `py app.py`
+### `py api.py`
 
 To run the client on localhost, go to the 'src' folder and run below command:
 ### `npm start`
