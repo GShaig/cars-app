@@ -1,0 +1,26 @@
+services:
+  api:
+    container_name: Flask-API
+    hostname: flask
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: flask-api
+    ports: ['5000:5000']
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+  client:
+    container_name: React-Client
+    hostname: react
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    image: react-client
+    ports: ['3000:3000']
+  nginx:
+    container_name: Nginx-Reverse-Proxy
+    hostname: nginx
+    image: nginx-proxy
+    ports: ['80:80']
